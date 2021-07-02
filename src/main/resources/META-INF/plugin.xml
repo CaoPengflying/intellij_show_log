@@ -1,0 +1,37 @@
+<idea-plugin>
+    <id>com.cpf.intellij_show_log</id>
+    <name>ShowLog</name>
+    <vendor email="caopengflying@gmail.com" url="http://www.lmcpf.com">caopengflying</vendor>
+
+    <description><![CDATA[
+    <ul>
+        <h3>English:</h3>
+        <li>Format output mysql-log</li>
+        <h3>中文：</h3>
+        <li>格式化输出 show-log</li>
+        <h3>支持的orm框架</h3>
+        <li>xorm</li>
+      </ul>
+    ]]></description>
+
+    <!--必须为企业版-->
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <consoleFilterProvider implementation="com.cpf.showlog.ShowLogProvider"/>
+        <toolWindow id="Show Log" secondary="true" icon="/icons/showLog.png" anchor="bottom"
+                    factoryClass="com.cpf.showlog.ShowLogWindow"/>
+    </extensions>
+
+    <actions>
+        <!-- restore sql from selection -->
+        <action class="com.cpf.showlog.action.RestoreSqlForSelection"
+                id="RestoreSqlAction"
+                text="Restore Sql from Selection"
+                description="Restore Sql from Selection">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <add-to-group group-id="ConsoleEditorPopupMenu" anchor="before" relative-to-action="ConsoleView.ClearAll"/>
+        </action>
+    </actions>
+</idea-plugin>
