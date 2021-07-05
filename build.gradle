@@ -1,0 +1,59 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url "https://www.jetbrains.com/intellij-repository/releases/" }
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        mavenLocal()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    dependencies {
+
+    }
+}
+
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.4.21'
+}
+
+
+//2.1 插件配置
+apply plugin: 'org.jetbrains.intellij'
+apply plugin: 'idea'
+apply plugin: 'java'
+
+
+group 'com.cpf'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    maven { url 'https://maven.aliyun.com/repository/public/' }
+    maven { url "https://www.jetbrains.com/intellij-repository/releases" }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    /*compile group: 'com.alibaba', name: 'druid', version: '1.1.23'*/
+    compile fileTree(dir: 'libs', include: [ '*'])
+}
+
+intellij {
+    pluginName 'ShowLog'
+    version '2020.2'
+}
+patchPluginXml {
+    //changeNotes里的内容展示位置参考图14
+    changeNotes """
+      1.0版本.
+
+      第1.0版本：初始化这个测试插件项目"""
+}
+
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
