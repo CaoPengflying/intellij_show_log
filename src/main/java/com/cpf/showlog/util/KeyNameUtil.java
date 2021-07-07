@@ -43,5 +43,5 @@ public class KeyNameUtil {
     public static final String SQL_STATEMENT_REGEXP = "\\[SQL][\\w\\s^%&',;=?$\\x22\\\"#`\\()<>]*";
     public static final String SQL_PRE_REGEXP = "\\[SQL]";
 
-    public static final String SQL_REGEXP = "\\[SQL][\\w\\s^%&',;=?$\\x22\\\"#`\\()<>]*\\[]interface \\{}\\{[\\\"\\w \\s^%&',;=?$\\x22#-:一-龥]*} - took: [\\d.]*ms";
+    public static final String SQL_REGEXP = "\\[SQL][\\w\\s^%&',;8*=?$\\x22\\\"#`\\()<>]*\\[]interface \\{}\\{[\\\"\\w \\s^%&',;=?$\\x22#-:一-龥]*} - took: [\\d.]*ms";
 }
