@@ -95,7 +95,7 @@ public class SqlProUtil {
      * @param sqlStatement
      * @return
      */
-    private static String assemblyFormatSql( String param, String sqlStatement) throws Exception {
+    private static String assemblyFormatSql(String param, String sqlStatement) throws Exception {
         StringBuilder resultSql = new StringBuilder();
         int idx = 0;
         String[] split = StringUtils.split(param, ",");
@@ -106,6 +106,7 @@ public class SqlProUtil {
                     throw new Exception("sql 异常");
                 }
                 resultSql.append(split[idx]);
+                idx++;
                 continue;
             }
             resultSql.append(sqlStatement.charAt(i));
