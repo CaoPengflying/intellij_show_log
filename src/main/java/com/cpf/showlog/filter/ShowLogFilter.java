@@ -54,7 +54,7 @@ public class ShowLogFilter implements Filter {
             String restoreSql = null;
             try {
                 restoreSql = SqlProUtil.restoreSql(preparingLine);
-                PrintlnUtil.println(project, KeyNameUtil.SQL_Line + restoreSql, ConsoleViewContentType.USER_INPUT);
+                PrintlnUtil.println(project, KeyNameUtil.SQL_Line + "转换结果:", ConsoleViewContentType.USER_INPUT);
                 PrintlnUtil.printlnSqlType(project, restoreSql);
             } catch (Exception e) {
                 e.printStackTrace();
