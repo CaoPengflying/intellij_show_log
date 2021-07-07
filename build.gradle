@@ -44,6 +44,9 @@ dependencies {
 intellij {
     pluginName 'ShowLog'
     version '2020.2'
+
+    updateSinceUntilBuild false
+    downloadSources false
 }
 patchPluginXml {
     //changeNotes里的内容展示位置参考图14
